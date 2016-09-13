@@ -1,0 +1,235 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+	http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+
+	<context-param>
+		<description>编码方式选择</description>
+		<param-name>encode</param-name>
+		<param-value>utf-8</param-value>
+	</context-param>
+
+	<!-- 过滤器配置开始 -->
+	<filter>
+		<filter-name>encodefilter</filter-name>
+		<filter-class>com.car.filter.EncodeFilter</filter-class>
+	</filter>
+
+	<filter-mapping>
+		<filter-name>encodefilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<filter>
+		<filter-name>safetyfilter</filter-name>
+		<filter-class>com.car.filter.SafetyFilter</filter-class>
+	</filter>
+	<filter-mapping>
+		<filter-name>safetyfilter</filter-name>
+		<url-pattern>/*</url-pattern>
+	</filter-mapping>
+	<!-- 过滤器配置结束 -->
+
+
+	<servlet>
+		<servlet-name>GetPassCodeServlet</servlet-name>
+		<servlet-class>com.car.web.GetPassCodeServlet</servlet-class>
+	</servlet>
+  <servlet>
+    <servlet-name>RegisterServlet</servlet-name>
+    <servlet-class>com.car.web.RegisterServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>RegisterUserServlet</servlet-name>
+    <servlet-class>com.car.web.RegisterUserServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.car.web.LoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UpdatePwdServlet</servlet-name>
+    <servlet-class>com.car.web.UpdatePwdServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ForgetPwdServlet</servlet-name>
+    <servlet-class>com.car.web.ForgetPwdServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>ReSetPasswordServlet</servlet-name>
+    <servlet-class>com.car.web.ReSetPasswordServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CheckPCodeServlet</servlet-name>
+    <servlet-class>com.car.web.CheckPCodeServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>MaintainCarBaseInfoServlet</servlet-name>
+    <servlet-class>com.car.web.maintain.MaintainCarBaseInfoServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>MaintainCarMaintainInfoServlet</servlet-name>
+    <servlet-class>com.car.web.maintain.MaintainCarMaintainInfoServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SupplyMaintainInfoServlet</servlet-name>
+    <servlet-class>com.car.web.maintain.SupplyMaintainInfoServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SupplyCarBaseInfo</servlet-name>
+    <servlet-class>com.car.web.write.SupplyCarBaseInfo</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SupplyCarBaseInfoByCarNumber</servlet-name>
+    <servlet-class>com.car.web.write.SupplyCarBaseInfoByCarNumber</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SupplyMyMaintainInfoServlet</servlet-name>
+    <servlet-class>com.car.web.maintain.SupplyMyMaintainInfoServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SupplyCarAbnormalInfo</servlet-name>
+    <servlet-class>com.car.web.maintain.SupplyCarAbnormalInfo</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>SupplyNickNameServlet</servlet-name>
+    <servlet-class>com.car.web.write.SupplyNickNameServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CarOilOrderBaseIndoAddServlet</servlet-name>
+    <servlet-class>com.car.web.oil.CarOilOrderBaseIndoAddServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CarOilOrderBaseInfoQuery</servlet-name>
+    <servlet-class>com.car.web.oil.CarOilOrderBaseInfoQuery</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CarOilOrderInfoStorageServlet</servlet-name>
+    <servlet-class>com.car.web.oil.CarOilOrderInfoStorageServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>CarOilOrderInfoStorageQuery</servlet-name>
+    <servlet-class>com.car.web.oil.CarOilOrderInfoStorageQuery</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserSignlLoginServlet</servlet-name>
+    <servlet-class>com.car.web.UserSignlLoginServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>UserSignlLoginQueryServlet</servlet-name>
+    <servlet-class>com.car.web.UserSignlLoginQueryServlet</servlet-class>
+  </servlet>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<servlet-mapping>
+		<servlet-name>GetPassCodeServlet</servlet-name>
+		<url-pattern>/servlet/GetPassCodeServlet</url-pattern>
+	</servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RegisterServlet</servlet-name>
+    <url-pattern>/servlet/RegisterServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>RegisterUserServlet</servlet-name>
+    <url-pattern>/servlet/RegisterUserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/servlet/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UpdatePwdServlet</servlet-name>
+    <url-pattern>/servlet/UpdatePwdServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ForgetPwdServlet</servlet-name>
+    <url-pattern>/servlet/ForgetPwdServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>ReSetPasswordServlet</servlet-name>
+    <url-pattern>/servlet/ReSetPasswordServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CheckPCodeServlet</servlet-name>
+    <url-pattern>/servlet/CheckPCodeServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MaintainCarBaseInfoServlet</servlet-name>
+    <url-pattern>/servlet/MaintainCarBaseInfoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>MaintainCarMaintainInfoServlet</servlet-name>
+    <url-pattern>/servlet/MaintainCarMaintainInfoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SupplyMaintainInfoServlet</servlet-name>
+    <url-pattern>/servlet/SupplyMaintainInfoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SupplyCarBaseInfo</servlet-name>
+    <url-pattern>/servlet/SupplyCarBaseInfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SupplyCarBaseInfoByCarNumber</servlet-name>
+    <url-pattern>/servlet/SupplyCarBaseInfoByCarNumber</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SupplyMyMaintainInfoServlet</servlet-name>
+    <url-pattern>/servlet/SupplyMyMaintainInfoServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SupplyCarAbnormalInfo</servlet-name>
+    <url-pattern>/servlet/SupplyCarAbnormalInfo</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>SupplyNickNameServlet</servlet-name>
+    <url-pattern>/servlet/SupplyNickNameServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CarOilOrderBaseIndoAddServlet</servlet-name>
+    <url-pattern>/servlet/CarOilOrderBaseIndoAddServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CarOilOrderBaseInfoQuery</servlet-name>
+    <url-pattern>/servlet/CarOilOrderBaseInfoQuery</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CarOilOrderInfoStorageServlet</servlet-name>
+    <url-pattern>/servlet/CarOilOrderInfoStorageServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>CarOilOrderInfoStorageQuery</servlet-name>
+    <url-pattern>/servlet/CarOilOrderInfoStorageQuery</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserSignlLoginServlet</servlet-name>
+    <url-pattern>/servlet/UserSignlLoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>UserSignlLoginQueryServlet</servlet-name>
+    <url-pattern>/servlet/UserSignlLoginQueryServlet</url-pattern>
+  </servlet-mapping>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+</web-app>
